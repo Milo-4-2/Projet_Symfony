@@ -22,6 +22,9 @@ class Artist
     #[ORM\Column(length: 255)]
     private ?string $image = null;
 
+    #[ORM\OneToOne(mappedBy: 'artist', cascade: ['persist', 'remove'])]
+    private ?Event $events = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +62,23 @@ class Artist
     public function setImage(string $image): static
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getEvents(): ?Event
+    {
+        return $this->events;
+    }
+
+    public function setEvents(Event $events): static
+    {
+        // set the owning side of the relation if necessary
+        if ($events->getArtist() !== $this) {
+            $events->setArtist($this);
+        }
+
+        $this->events = $events;
 
         return $this;
     }

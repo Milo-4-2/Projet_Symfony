@@ -20,9 +20,6 @@
                     {% if app.user %}
                         <li>
                             <a href="{{ path('app_logout') }}">Logout</a>
-                            <form id="logout-form" action="{{ path('app_logout') }}" method="post" style="display: none;">
-                                <input type="hidden" name="_token" value="{{ csrf_token('logout') }}">
-                            </form>
                         </li>
                     {% else %}
                         <li><a href="{{ path('app_login') }}">Login</a></li>

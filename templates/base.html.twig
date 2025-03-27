@@ -18,9 +18,7 @@
                     <li><a href="{{ path('app_home_page') }}">Home</a></li>
 
                     {% if app.user %}
-                        <li>
-                            <a href="{{ path('app_logout') }}">Logout</a>
-                        </li>
+                        <li><a href="{{ path('app_logout') }}">Logout</a></li>
                     {% else %}
                         <li><a href="{{ path('app_login') }}">Login</a></li>
                     {% endif %}

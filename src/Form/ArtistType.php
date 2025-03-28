@@ -20,6 +20,10 @@ class ArtistType extends AbstractType
             ->add('image', FileType::class, [
                 'mapped' => false,
                 'required' => false,
+                'constraints' => [ /* ... */ ],
+                'attr' => [
+                    'accept' => 'image/*'
+                ],
             ])
         ;
     }

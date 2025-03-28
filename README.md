@@ -42,3 +42,11 @@ You can enable these in your __`php.ini`__ file (usually located at __`C:\Progra
 ;extension=fileinfo
 ;extension=gd
 ```
+
+- ## __Local environment configuration__
+
+Create a __`.env.local`__ file at the root of the project to override environment variables for your machine that contains :
+
+```dotenv
+DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
+```

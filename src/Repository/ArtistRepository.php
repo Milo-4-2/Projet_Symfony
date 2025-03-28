@@ -16,6 +16,14 @@ class ArtistRepository extends ServiceEntityRepository
         parent::__construct($registry, Artist::class);
     }
 
+    public function selectNameImage(): array
+    {
+        return $this->createQueryBuilder('a')
+            ->select('a.id, a.name, a.image')
+            ->getQuery()
+            ->getArrayResult(); // returns an array of arrays, not entities
+    }
+
     //    /**
     //     * @return Artist[] Returns an array of Artist objects
     //     */

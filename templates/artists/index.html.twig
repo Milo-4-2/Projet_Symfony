@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Artists{% endblock %}
+
+{% block body %}
+    <style>
+        img {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+
+    <h1>Artists</h1>
+
+    {% if artists is empty %}
+        <p class="no-artists">No artists found.</p>
+    {% else %}
+        <div class="artist-grid">
+            {% for artist in artists %}
+                <div class="artist-card">
+                    <a href="{{ path('app_home_page') }}">
+                        <img src="{{ asset('uploads/images/' ~ artist.image) }}" alt="{{ artist.name }}">
+                        <p class="artist-name">{{ artist.name }}</p>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

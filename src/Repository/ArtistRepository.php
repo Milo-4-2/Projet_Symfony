@@ -19,7 +19,7 @@ class ArtistRepository extends ServiceEntityRepository
     public function getDetails(int $id): array
     {
         return $this->createQueryBuilder('a')
-            ->select('a.name, a.description, a.image, e.id AS eventId, e.name, e.date')
+            ->select('a.name AS artistName, a.description, a.image, e.id AS eventId, e.name, e.date')
             ->leftJoin('a.events', 'e')
             ->where('a.id = :id')
             ->setParameter('id', $id)

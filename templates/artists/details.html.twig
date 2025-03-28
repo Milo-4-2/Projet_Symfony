@@ -11,12 +11,12 @@
     </style>
 
     <div>
-        <h1>{{ artist[0].name }}</h1>
+        <h1>{{ artist[0].artistName }}</h1>
 
         {% if artist[0].image %}
             <img
                     src="{{ asset('uploads/images/' ~ artist[0].image) }}"
-                    alt="{{ artist[0].name }}"
+                    alt="{{ artist[0].artistName }}"
             >
         {% endif %}
 
@@ -27,13 +27,11 @@
         {% if artist|length > 0 and artist[0].eventId is not null %}
             <ul>
                 {% for row in artist %}
-                    <li>
-                        <strong>{{ row.name }}</strong> — {{ row.date|date('F j, Y') }}
-                    </li>
+                    <li>{{ row.name }}— {{ row.date|date('F j, Y') }}</li>
                 {% endfor %}
             </ul>
         {% else %}
-            <p><em>No events found for this artist.</em></p>
+            <p>No events found for this artist.</p>
         {% endif %}
     </div>
 {% endblock %}

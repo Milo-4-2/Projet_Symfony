@@ -42,6 +42,7 @@ security:
         - { path: ^/newArtist, roles: ROLE_ADMIN }
         - { path: ^/users, roles: ROLE_ADMIN }
         - { path: ^/logout, roles: ROLE_USER }
+        - { path: ^/artists, roles: ROLE_USER }
         - { path: ^/, roles: PUBLIC_ACCESS }
 
 when@test:

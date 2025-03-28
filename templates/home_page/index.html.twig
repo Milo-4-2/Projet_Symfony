@@ -3,5 +3,9 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-<h1>Home</h1>
+    {% if app.user %}
+        <h1>Welcome, {{ app.user.userIdentifier }}!</h1>
+    {% else %}
+        <h1>Home</h1>
+    {% endif %}
 {% endblock %}

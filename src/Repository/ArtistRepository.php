@@ -35,6 +35,14 @@ class ArtistRepository extends ServiceEntityRepository
             ->getArrayResult();
     }
 
+    public function selectNameDescriptionImage(): array
+    {
+        return $this->createQueryBuilder('a')
+            ->select('a.id, a.name, a.description')
+            ->getQuery()
+            ->getArrayResult();
+    }
+
     //    /**
     //     * @return Artist[] Returns an array of Artist objects
     //     */

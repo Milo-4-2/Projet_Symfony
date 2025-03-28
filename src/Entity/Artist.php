@@ -22,7 +22,7 @@ class Artist
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
 
-    #[ORM\OneToMany(mappedBy: 'artist', targetEntity: Event::class, cascade: ['persist', 'remove'])]
+    #[ORM\OneToMany(targetEntity: Event::class, mappedBy: 'artist', cascade: ['persist', 'remove'])]
     private ?Event $events = null;
 
     public function getId(): ?int

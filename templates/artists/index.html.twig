@@ -13,14 +13,16 @@
     <h1>Artists</h1>
 
     {% if artists is empty %}
-        <p class="no-artists">No artists found.</p>
+        <p>No artists found.</p>
     {% else %}
-        <div class="artist-grid">
+        <div>
             {% for artist in artists %}
-                <div class="artist-card">
-                    <a href="{{ path('app_home_page') }}">
+                <div>
+                    <a href="{{ path('app_artist_details', {'id': artist.id}) }}">
                         <img src="{{ asset('uploads/images/' ~ artist.image) }}" alt="{{ artist.name }}">
-                        <p class="artist-name">{{ artist.name }}</p>
+                    </a>
+                    <a href="{{ path('app_artist_details', {'id': artist.id}) }}">
+                        <p>{{ artist.name }}</p>
                     </a>
                 </div>
             {% endfor %}

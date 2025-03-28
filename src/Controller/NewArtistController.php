@@ -71,7 +71,7 @@ final class NewArtistController extends AbstractController
 
             $this->addFlash('success', 'Artist created!');
 
-            return $this->redirectToRoute('app_home_page');
+            return $this->redirectToRoute('app_artists');
         }
 
         return $this->render('new_artist/index.html.twig', [

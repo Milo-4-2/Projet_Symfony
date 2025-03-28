@@ -9,6 +9,15 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class ArtistsController extends AbstractController
 {
+    #[Route('/artists/{id}', name: 'app_artist_details')]
+    public function details(int $id, ArtistRepository $artistRepository): Response
+    {
+        $artist = $artistRepository->getDetails($id);
+
+        return $this->render('artists/details.html.twig', [
+            'artist' => $artist,
+        ]);
+    }
     #[Route('/artists', name: 'app_artists')]
     public function index(ArtistRepository $artistRepository): Response
     {

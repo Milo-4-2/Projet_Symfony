@@ -20,9 +20,9 @@ class Event
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
-    #[ORM\OneToOne(inversedBy: 'events', cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(inversedBy: 'events')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?artist $artist = null;
+    private ?Artist $artist = null;
 
     public function getId(): ?int
     {

@@ -16,12 +16,23 @@ class ArtistRepository extends ServiceEntityRepository
         parent::__construct($registry, Artist::class);
     }
 
+    public function getDetails(int $id): array
+    {
+        return $this->createQueryBuilder('a')
+            ->select('a.name, a.description, a.image, e.id AS eventId, e.name, e.date')
+            ->leftJoin('a.events', 'e')
+            ->where('a.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getArrayResult();
+    }
+
     public function selectNameImage(): array
     {
         return $this->createQueryBuilder('a')
             ->select('a.id, a.name, a.image')
             ->getQuery()
-            ->getArrayResult(); // returns an array of arrays, not entities
+            ->getArrayResult();
     }
 
     //    /**

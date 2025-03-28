@@ -69,6 +69,15 @@ Navigate to the project's root and run :
 composer install
 ```
 
+- ## __Set up the database__
+
+Navigate to the project's root and run :
+
+```sh
+symfony console make:migration
+symfony console doctrine:migration:migrate
+```
+
 # __Run the application__
 
 You can run the application by running the command :

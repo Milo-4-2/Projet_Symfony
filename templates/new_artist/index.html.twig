@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add a new artist{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.description) }}
+    {{ form_row(form.image) }}
+
+    <button type="submit" class="btn btn-primary">Create Artist</button>
+    {{ form_end(form) }}
+{% endblock %}

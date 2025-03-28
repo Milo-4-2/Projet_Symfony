@@ -19,7 +19,7 @@ class Artist
     #[ORM\Column(length: 1000)]
     private ?string $description = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
 
     #[ORM\OneToOne(mappedBy: 'artist', cascade: ['persist', 'remove'])]

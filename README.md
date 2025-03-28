@@ -32,6 +32,16 @@ If not, you can download it on [getcomposer.org](https://getcomposer.org/downloa
 
 Make sure to add it to your PATH (usually __`C:\Users\[user name]\AppData\Roaming\Composer\vendor\bin`__).
 
+- ## __Symfony CLI__
+
+Make sure you have __`Symfony`__ installed on your device :
+
+```sh
+symfony -v
+```
+
+If not, you can see the installation methods on [symfony.com](https://symfony.com/download).
+
 - ## __PHP extensions__
 
 Make sure __`fileinfo`__ and __`gd`__ are enabled.
@@ -50,3 +60,21 @@ Create a __`.env.local`__ file at the root of the project to override environmen
 ```dotenv
 DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
 ```
+
+- ## __Install dependencies__
+
+Navigate to the project's root and run :
+
+```sh
+composer install
+```
+
+# __Run the application__
+
+You can run the application by running the command :
+
+```sh
+symfony serve
+```
+
+Then access the application in your browser at[localhost:8000](https://localhost:8000).

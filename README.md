@@ -86,4 +86,4 @@ You can run the application by running the command :
 symfony serve
 ```
 
-Then access the application in your browser at[localhost:8000](https://localhost:8000).
+Then access the application in your browser at [localhost:8000](https://localhost:8000).

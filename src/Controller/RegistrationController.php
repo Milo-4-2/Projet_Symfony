@@ -29,6 +29,8 @@ class RegistrationController extends AbstractController
             // encode the plain password
             $user->setPassword($userPasswordHasher->hashPassword($user, $plainPassword));
 
+            $user->setRegistrationDate(new \DateTime());
+
             $existingUserCount = $UserRepository->count([]);
             if ($existingUserCount === 0) {
                 // First user: Assign ROLE_ADMIN
